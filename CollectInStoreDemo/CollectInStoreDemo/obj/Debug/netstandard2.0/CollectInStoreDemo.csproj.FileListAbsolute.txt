@@ -1,0 +1,15 @@
+/Users/ooyebanji/Projects/CollectInStoreDemo/CollectInStoreDemo/CollectInStoreDemo/bin/Debug/netstandard2.0/CollectInStoreDemo.deps.json
+/Users/ooyebanji/Projects/CollectInStoreDemo/CollectInStoreDemo/CollectInStoreDemo/bin/Debug/netstandard2.0/CollectInStoreDemo.dll
+/Users/ooyebanji/Projects/CollectInStoreDemo/CollectInStoreDemo/CollectInStoreDemo/bin/Debug/netstandard2.0/ref/CollectInStoreDemo.dll
+/Users/ooyebanji/Projects/CollectInStoreDemo/CollectInStoreDemo/CollectInStoreDemo/bin/Debug/netstandard2.0/CollectInStoreDemo.pdb
+/Users/ooyebanji/Projects/CollectInStoreDemo/CollectInStoreDemo/CollectInStoreDemo/obj/Debug/netstandard2.0/CollectInStoreDemo.csproj.AssemblyReference.cache
+/Users/ooyebanji/Projects/CollectInStoreDemo/CollectInStoreDemo/CollectInStoreDemo/obj/Debug/netstandard2.0/CollectInStoreDemo.GeneratedMSBuildEditorConfig.editorconfig
+/Users/ooyebanji/Projects/CollectInStoreDemo/CollectInStoreDemo/CollectInStoreDemo/obj/Debug/netstandard2.0/App.xaml.g.cs
+/Users/ooyebanji/Projects/CollectInStoreDemo/CollectInStoreDemo/CollectInStoreDemo/obj/Debug/netstandard2.0/MainPage.xaml.g.cs
+/Users/ooyebanji/Projects/CollectInStoreDemo/CollectInStoreDemo/CollectInStoreDemo/obj/Debug/netstandard2.0/CollectInStoreDemo.AssemblyInfoInputs.cache
+/Users/ooyebanji/Projects/CollectInStoreDemo/CollectInStoreDemo/CollectInStoreDemo/obj/Debug/netstandard2.0/CollectInStoreDemo.AssemblyInfo.cs
+/Users/ooyebanji/Projects/CollectInStoreDemo/CollectInStoreDemo/CollectInStoreDemo/obj/Debug/netstandard2.0/CollectInStoreDemo.csproj.CoreCompileInputs.cache
+/Users/ooyebanji/Projects/CollectInStoreDemo/CollectInStoreDemo/CollectInStoreDemo/obj/Debug/netstandard2.0/XamlC.stamp
+/Users/ooyebanji/Projects/CollectInStoreDemo/CollectInStoreDemo/CollectInStoreDemo/obj/Debug/netstandard2.0/CollectInStoreDemo.dll
+/Users/ooyebanji/Projects/CollectInStoreDemo/CollectInStoreDemo/CollectInStoreDemo/obj/Debug/netstandard2.0/refint/CollectInStoreDemo.dll
+/Users/ooyebanji/Projects/CollectInStoreDemo/CollectInStoreDemo/CollectInStoreDemo/obj/Debug/netstandard2.0/CollectInStoreDemo.pdb

@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "bC2a4gW9XMSrYgwT/41MPX3OL4BP28PegUsiWyvv57xAB0Bgfo7b7pm3SmPIkNAIDhVRbrm7nKo+01LxUhKJPw==",
+  "success": true,
+  "projectFilePath": "/Users/ooyebanji/Projects/CollectInStoreDemo/CollectInStoreDemo/CollectInStoreDemo.iOS/CollectInStoreDemo.iOS.csproj",
+  "expectedPackageFiles": [
+    "/Users/ooyebanji/.nuget/packages/communitytoolkit.mvvm/8.2.1/communitytoolkit.mvvm.8.2.1.nupkg.sha512",
+    "/Users/ooyebanji/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512",
+    "/Users/ooyebanji/.nuget/packages/system.componentmodel.annotations/5.0.0/system.componentmodel.annotations.5.0.0.nupkg.sha512",
+    "/Users/ooyebanji/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/Users/ooyebanji/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/Users/ooyebanji/.nuget/packages/xamarin.communitytoolkit/2.0.6/xamarin.communitytoolkit.2.0.6.nupkg.sha512",
+    "/Users/ooyebanji/.nuget/packages/xamarin.essentials/1.7.0/xamarin.essentials.1.7.0.nupkg.sha512",
+    "/Users/ooyebanji/.nuget/packages/xamarin.forms/5.0.0.2612/xamarin.forms.5.0.0.2612.nupkg.sha512"
+  ],
+  "logs": []
+}

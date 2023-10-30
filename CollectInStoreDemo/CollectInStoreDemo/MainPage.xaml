@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+    xmlns:collectInStore="clr-namespace:CollectInStoreDemo"
+    
+    xmlns:converters="http://xamarin.com/schemas/2020/toolkit"
+    xmlns:rows="clr-namespace:TotalPlatformCommon.Shared.CollectInStore.Rows"
+    x:DataType="collectInStore:CollectInStoreViewModel"
+             x:Class="CollectInStoreDemo.MainPage">
+
+    <ContentPage.Resources>
+        <converters:InvertedBoolConverter
+            x:Key="InvertedBoolConverter"/>
+
+        <Style
+            x:Key="BoldStyle"
+            TargetType="Label">
+            <Setter
+                Property="FontAttributes"
+                Value="Bold" />
+        </Style>
+
+        <Style
+            x:Key="ErrorTextStyle"
+            TargetType="Label">
+            <Setter
+                Property="TextColor"
+                Value="Red" />
+        </Style>
+
+        <DataTemplate
+            x:Key="StoreDetailLineDataTemplate"
+            x:DataType="{x:Type x:String}">
+            <Label
+                Text="{Binding .}"/>
+        </DataTemplate>
+
+        <DataTemplate
+            x:Key="StoreDetailsDataTemplate"
+            x:DataType="rows:StoreDetailsRow">
+            <ViewCell Tapped="ViewCell_Tapped" >
+                <Grid>
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor"
+                                        Value="Red" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+
+
+                    </VisualStateManager.VisualStateGroups>
+                    <Grid
+                    Padding="16"
+                    RowSpacing="16"
+                    RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor"
+                                        Value="Blue" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+
+
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid
+                        Grid.Row="0"
+                        ColumnDefinitions="*,Auto"
+                        Padding="0"
+                        ColumnSpacing="8">
+
+                            <Label
+                            Grid.Column="0"
+                            Text="{Binding StoreName}" />
+
+                            <Label
+                            Grid.Column="1"
+                            IsVisible="{Binding IsStockAvailable}"
+                            TextColor="Green"
+                            Text="In Stock" />
+
+                            <Label
+                            Grid.Column="1"
+                            IsVisible="{Binding IsStockAvailable, Converter={StaticResource InvertedBoolConverter}}"
+                            TextColor="Red"
+                            Text="Sorry - No Stock" />
+
+                        </Grid>
+
+                        <Label
+                        IsVisible="{Binding IsClosingSoon}"
+                        Grid.Row="1"
+                        Text="{Binding ClosingSoonMessage}" />
+
+                        <Label
+                        IsVisible="{Binding IsClosingSoon, Converter={StaticResource InvertedBoolConverter}}"
+                        Grid.Row="1"
+                        Text="{Binding OpeningMessage}"/>
+
+                        <Label
+                        Grid.Row="2"
+                        HorizontalOptions="Start"
+                        Text="{Binding Distance}" />
+
+                        <Label
+                        Grid.Row="2"
+                        IsVisible="{Binding StoreDetailsVisible, Converter={StaticResource InvertedBoolConverter}}"
+                        HorizontalOptions="End"
+                        TextDecorations="Underline"
+                        TextColor="Black"
+                        Text="View Store Information">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <Label
+                        Grid.Row="2"
+                        IsVisible="{Binding StoreDetailsVisible}"
+                        HorizontalOptions="End"
+                        TextDecorations="Underline"
+                        TextColor="Black"
+                        Text="Hide Store Information">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <StackLayout
+                            x:Name="StoreDetailsControl"
+                            Grid.Row="3"
+                            IsVisible="{Binding StoreDetailsVisible}"
+                            BindableLayout.ItemsSource="{Binding StoreDetails}"
+                            BindableLayout.ItemTemplate="{StaticResource StoreDetailLineDataTemplate}"/>
+
+                        <Button
+                        Grid.Row="4"
+                        BackgroundColor="Green"
+                        TextColor="White"
+                        Command="{Binding AddToBagCommand}"
+                        AutomationId="AddToBagButton"
+                        Text="Add To Bag"/>
+
+                    </Grid>
+
+                    <BoxView
+                    HeightRequest="1"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Fill"
+                    BackgroundColor="LightGray" />
+                </Grid>
+
+            </ViewCell>
+        </DataTemplate>
+
+    </ContentPage.Resources>
+    <ContentPage.Content>
+
+        <Grid
+            Padding="0,80,0,0"
+            RowDefinitions="130, Auto,*"
+            RowSpacing="0" >
+            <StackLayout
+                Margin="10">
+                <Label
+                    Text="Enter Postcode or Location"
+                    TextColor="Black" />
+                <Frame
+                    BorderColor="LightGray"
+                    HasShadow="False"
+                    CornerRadius="24"
+                    HeightRequest="48"
+                    Padding="16,0">
+                    <Entry
+                        Placeholder="E.g. \'LE19 4AT\' or Leicester"
+                        PlaceholderColor="LightGray"
+                        Text="{Binding Postcode}"
+                        ReturnCommand="{Binding PostcodeEnteredCommand}">
+                    </Entry>
+                </Frame>
+                <Grid
+                    Padding="0,5,0,0"
+                    VerticalOptions="Center"
+                    ColumnDefinitions="*,Auto">
+                    <Label
+                        VerticalTextAlignment="End"
+                        VerticalOptions="End"
+                        TextColor="Black"
+                        Text="Show stores with available stock" />
+                    <Switch
+                        Grid.Column="1"
+                        VerticalOptions="Start"
+                        OnColor="Green"
+                        IsToggled="{Binding ShowStoresWithAvailableStock, Mode=TwoWay}" />
+                </Grid>
+            </StackLayout>
+            <StackLayout
+                IsVisible="{Binding NoItemsTextVisibility}"
+                Grid.Row="1">
+
+                <Label
+                        Text="This item is not available in any stores local to you." />
+                <BoxView
+                    HeightRequest="1"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Fill"
+                    BackgroundColor="LightGray" />
+            </StackLayout>
+            <Label
+                Grid.Row="1"
+                Padding="16"
+                Margin="10,10,10,0"
+                IsVisible="{Binding FreeItemsTextVisibility}"
+                BackgroundColor="LightGray"
+                Text="We offer a *FREE* collect in store today service. We will prepare your item in under an hour, and we\'ll text you when it\'s ready. That\'s it! *You can then pop down anytime.*" />
+            <Grid
+                 Grid.Row="1"
+                 Padding="0,5,0,5"
+                 BackgroundColor="LightGray"
+                 IsVisible="{Binding SummaryTextVisibility}" >
+                <Label
+                    HorizontalOptions="Fill"
+                    Margin="10"
+                    Text="{Binding SummaryText}" />
+                <BoxView
+                    HeightRequest="1"
+                    VerticalOptions="Start"
+                    HorizontalOptions="Fill"
+                    BackgroundColor="LightGray" />
+            </Grid>
+            <Grid Grid.Row="2" >
+                <collectInStore:EnhancedListView
+                    x:Name="CollectInStoreListView"
+                    HasUnevenRows="True"
+                    Footer=""
+                    ItemsSource="{Binding Rows}"
+                    ItemTemplate="{StaticResource StoreDetailsDataTemplate}">
+                    <x:Arguments>
+                        <ListViewCachingStrategy>RetainElement</ListViewCachingStrategy>
+                    </x:Arguments>
+                </collectInStore:EnhancedListView>
+
+                <Grid
+                    x:Name="LoadingSpinner"
+                    VerticalOptions="End"
+                    HeightRequest="150"
+                    IsVisible="{Binding IsLoading}">
+                    <ActivityIndicator
+                        WidthRequest="42"
+                        HeightRequest="42"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        IsRunning="true"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>
+

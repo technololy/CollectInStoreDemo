@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <_PostProcessingItem Include="CollectInStoreDemo.iOS.app/CollectInStoreDemo.iOS">
+      <BCSymbolMapName>CollectInStoreDemo.iOS.bcsymbolmap</BCSymbolMapName>
+      <NoDSymUtil>true</NoDSymUtil>
+      <dSYMSourcePathExists>false</dSYMSourcePathExists>
+      <NoSymbolStrip>true</NoSymbolStrip>
+      <dSYMInfoPlistRelativePath>CollectInStoreDemo.iOS.app.dSYM\Contents\Info.plist</dSYMInfoPlistRelativePath>
+      <SymbolFile>/Users/ooyebanji/Projects/CollectInStoreDemo/CollectInStoreDemo/CollectInStoreDemo.iOS/obj/iPhoneSimulator/Debug/mtouch-symbols.list</SymbolFile>
+      <DSymName>CollectInStoreDemo.iOS.app.dSYM</DSymName>
+      <SourceProjectPath>/Users/ooyebanji/Projects/CollectInStoreDemo/CollectInStoreDemo/CollectInStoreDemo.iOS</SourceProjectPath>
+    </_PostProcessingItem>
+  </ItemGroup>
+</Project>
